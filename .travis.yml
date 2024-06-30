@@ -7,7 +7,7 @@ before_install:
   - docker build -t rumi/docker-reactjs -f Dockerfile.dev .
 
 script:
-  - docker run rumi/docker-reactjs npm run test -- --passWithNoTests
+  - docker run -e CI=true rumi/docker-reactjs npm run test
 
 cache:
   directories:
